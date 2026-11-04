@@ -5,14 +5,14 @@ import java.awt.*;
 public class Ours extends Bestiole {
 
     boolean polaire;
-    private boolean slash = true;
+    private boolean skin = true;
 
     public Ours(boolean polaire) {
         this.polaire = polaire;
     }
 
     public Action getAction(BestioleInfo info) {
-        slash = !slash;
+        skin = !skin;
         if (info.getEnFace() == Voisin.AUTRE) {
             return Action.INFECTER;
         } else if (info.getEnFace() == Voisin.RIEN) {
@@ -31,6 +31,6 @@ public class Ours extends Bestiole {
     }
 
     public String toString() {
-        return slash ? "/" : "\\";
+        return skin ? "/" : "\\";
     }
 }
